@@ -32,7 +32,7 @@ protocol BigInt {
     
 }
 
-class TinyBigInt: BigInt {
+struct TinyBigInt: BigInt {
     
     public init(sign: sign? = nil,
                 coef: Array<Int>? = nil,
@@ -60,7 +60,13 @@ class TinyBigInt: BigInt {
     func bigInt() {
     }
     
-    public func bigInt(_ num: String) {
+    public mutating func bigInt(_ num: String) {
+        var coefN = Array<Int?>(repeating: nil, count: maxL)
+        for i in 0...maxL-1 {
+            coefN[i] = 0
+        }
+        
+        self.coef = coefN as? Array<Int>
         let numb = num
         var count = numb.count
         
@@ -74,10 +80,11 @@ class TinyBigInt: BigInt {
         let firstSymb = self.sign! == .minus ? 1 : 0
         
         //заполняем массив в зависимости от знака
-        for i in firstSymb...maxL-1 {
+        for i in firstSymb...numb.count-1 {
             
             let j = self.sign! == .minus ? i-1 : i
-            let char = numb[numb.index(numb.startIndex, offsetBy: i)]
+            let index = numb.index(numb.startIndex, offsetBy: i)
+            let char = numb[index]
             if char >= "0" && char <= "9" {
                 guard let intChar = Int(String(char)) else { return }
                 self.coef![j] = intChar
@@ -93,7 +100,13 @@ class TinyBigInt: BigInt {
     }
     
     
-    public func bigInt(_ num: Int) {
+    public mutating func bigInt(_ num: Int) {
+        var coefN = Array<Int?>(repeating: nil, count: maxL)
+        for i in 0...maxL-1 {
+            coefN[i] = 0
+        }
+        
+        self.coef = coefN as? Array<Int>
         var i = 0
         var temp = TinyBigInt().coef
         var numb = num
