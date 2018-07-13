@@ -23,8 +23,8 @@ protocol BigInt {
     func reverse()
     
     func bigInt()
-    mutating func bigInt(_ num: String)
-    mutating func bigInt(_ num: Int)
+    mutating func bigInt(_ num: String, decimals: Int)
+    mutating func bigInt(_ num: Int, decimals: Int)
     func bigInt(_ num: Self)
     static func +(lhs: Self, rhs: Self)
     static func -(lhs: Self, rhs: Self)
@@ -60,7 +60,7 @@ struct TinyBigInt: BigInt {
     func bigInt() {
     }
     
-    public mutating func bigInt(_ num: String) {
+    public mutating func bigInt(_ num: String, decimals: Int = 10) {
         var coefN = Array<Int?>(repeating: nil, count: maxL)
         for i in 0...maxL-1 {
             coefN[i] = 0
@@ -100,7 +100,7 @@ struct TinyBigInt: BigInt {
     }
     
     
-    public mutating func bigInt(_ num: Int) {
+    public mutating func bigInt(_ num: Int, decimals: Int = 10) {
         var coefN = Array<Int?>(repeating: nil, count: maxL)
         for i in 0...maxL-1 {
             coefN[i] = 0

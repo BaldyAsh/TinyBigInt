@@ -15,6 +15,7 @@ class BigIntTests: XCTestCase {
         var a = TinyBigInt()
         let numb1 = a.bigInt(13513532)
         let numb2 = a.bigInt("2141241245")
+        let numb3 = a.bigInt(10, decimals: 2)
     }
     
 }
