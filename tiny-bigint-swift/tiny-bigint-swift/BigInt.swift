@@ -17,9 +17,9 @@ enum sign: Int {
 
 protocol BigInt {
     
-    var coef: Array<Int>? {get set}
-    var sign: sign? {get set}
-    var size: Int? {get set}
+    var coef: Array<Int>? {get}
+    var sign: sign? {get}
+    var size: Int? {get}
     func reverse()
     
     func bigInt()
@@ -48,11 +48,11 @@ struct TinyBigInt: BigInt {
         self.size = size
     }
     
-    internal var coef: Array<Int>?
+    public var coef: Array<Int>?
     
-    internal var sign: sign?
+    public var sign: sign?
     
-    internal var size: Int?
+    public var size: Int?
     
     func reverse() {
     }
