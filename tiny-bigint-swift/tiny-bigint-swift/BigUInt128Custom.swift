@@ -10,45 +10,33 @@ import Foundation
 
 public struct BigUInt128Custom {
     
-    var numberss: (UInt32, UInt32, UInt32)
+    var internalStorage: (UInt32, UInt32, UInt32)
     
     //Just for testing purposes. Should be change to smth else.
     init(numbers: (UInt32, UInt32, UInt32)) {
-        numberss = numbers
+        internalStorage = numbers
     }
     
     //Default value
     init() {
-        numberss = (0, 0, 0)
+        internalStorage = (0, 0, 0)
     }
+    
+    private static let base: UInt64 = UInt64(UInt32.max) + 1
     
     
     static func +(_ lhs: BigUInt128Custom, _ rhs: BigUInt128Custom) -> BigUInt128Custom {
         
-        var leftZero = [UInt32](repeating: 0, count: 10)
-        var leftFirst = [UInt32](repeating: 0, count: 10)
-        var leftSecond = [UInt32](repeating: 0, count: 10)
+        var result: (UInt32, UInt32, UInt32) = (0, 0, 0)
         
-        putNumbersIntoArray(array: &leftZero, number: lhs.numberss.0)
-        putNumbersIntoArray(array: &leftFirst, number: lhs.numberss.1)
-        putNumbersIntoArray(array: &leftSecond, number: lhs.numberss.2)
+        //Calculations
+        result.2 = UInt32((UInt64(lhs.internalStorage.2) + UInt64(rhs.internalStorage.2)) % base)
+        result.1 += UInt32((UInt64(lhs.internalStorage.2) + UInt64(rhs.internalStorage.2)) / base)
+        result.1 += UInt32((UInt64(lhs.internalStorage.1) + UInt64(rhs.internalStorage.1)) % base)
+        result.0 += UInt32((UInt64(lhs.internalStorage.1) + UInt64(rhs.internalStorage.1)) / base)
+        result.0 += UInt32((UInt64(lhs.internalStorage.0) + UInt64(rhs.internalStorage.0)) % base)
         
-        var rightZero = [UInt32](repeating: 0, count: 10)
-        var rightFirst = [UInt32](repeating: 0, count: 10)
-        var rightSecond = [UInt32](repeating: 0, count: 10)
-        putNumbersIntoArray(array: &rightZero, number: rhs.numberss.0)
-        putNumbersIntoArray(array: &rightFirst, number: rhs.numberss.1)
-        putNumbersIntoArray(array: &rightSecond, number: rhs.numberss.2)
-        
-        //Here is the add functions happens....probably
-        var firstResult = [UInt32](repeating: 0, count: 10)
-        var secondResult = [UInt32](repeating: 0, count: 10)
-        var thirdResult = [UInt32](repeating: 0, count: 10)
-        for i in 0..<max(leftZero.count, rightZero.count) {
-            
-            
-        }
-        return BigUInt128Custom(numbers: (1,1,1))
+        return BigUInt128Custom(numbers: result)
     }
     
     //Just a convenience function to fill the arrays with numbers
@@ -63,5 +51,13 @@ public struct BigUInt128Custom {
         }
     }
     
+}
+
+extension BigUInt128Custom: Equatable {
+    public static func ==(_ lhs: BigUInt128Custom, _ rhs: BigUInt128Custom) -> Bool {
+        return lhs.internalStorage.0 == rhs.internalStorage.0 &&
+            lhs.internalStorage.1 == rhs.internalStorage.1 &&
+            lhs.internalStorage.2 == rhs.internalStorage.2
+    }
 }
 
