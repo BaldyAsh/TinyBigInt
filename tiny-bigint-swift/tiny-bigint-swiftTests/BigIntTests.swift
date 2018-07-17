@@ -13,8 +13,8 @@ class BigIntTests: XCTestCase {
     
     func testInit() {
         var a = TinyBigInt()
-        let numb1 = a.bigInt(13513532)
-        let numb2 = a.bigInt("2141241245")
+        let numb1 = a.bigInt(214124)
+        let numb2 = a.bigInt("21412412451351353999999999999")
         let numb3 = a.bigInt(10, decimals: 2)
     }
     

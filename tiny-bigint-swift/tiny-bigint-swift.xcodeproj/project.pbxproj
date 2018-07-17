@@ -14,9 +14,9 @@
 		E218367B20F8F9BF00795FDC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E218367920F8F9BF00795FDC /* Main.storyboard */; };
 		E218367D20F8F9C000795FDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E218367C20F8F9C000795FDC /* Assets.xcassets */; };
 		E218368020F8F9C000795FDC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E218367E20F8F9C000795FDC /* LaunchScreen.storyboard */; };
-		E218368B20F8F9C000795FDC /* tiny_bigint_swiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E218368A20F8F9C000795FDC /* tiny_bigint_swiftTests.swift */; };
 		E218369620F8F9CF00795FDC /* BigInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E218369520F8F9CF00795FDC /* BigInt.swift */; };
 		E218369A20F8F9F600795FDC /* BigIntTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E218369920F8F9F600795FDC /* BigIntTests.swift */; };
+		E2AF220920FD730200B4849B /* TinyUInt128.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AF220820FD730200B4849B /* TinyUInt128.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,10 +40,10 @@
 		E218367F20F8F9C000795FDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E218368120F8F9C000795FDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E218368620F8F9C000795FDC /* tiny-bigint-swiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "tiny-bigint-swiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E218368A20F8F9C000795FDC /* tiny_bigint_swiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tiny_bigint_swiftTests.swift; sourceTree = "<group>"; };
 		E218368C20F8F9C000795FDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E218369520F8F9CF00795FDC /* BigInt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigInt.swift; sourceTree = "<group>"; };
 		E218369920F8F9F600795FDC /* BigIntTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigIntTests.swift; sourceTree = "<group>"; };
+		E2AF220820FD730200B4849B /* TinyUInt128.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinyUInt128.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +93,7 @@
 				E218368120F8F9C000795FDC /* Info.plist */,
 				E218369520F8F9CF00795FDC /* BigInt.swift */,
 				000B708F20F93D57005DE14B /* BigUInt128Custom.swift */,
+				E2AF220820FD730200B4849B /* TinyUInt128.swift */,
 			);
 			path = "tiny-bigint-swift";
 			sourceTree = "<group>";
@@ -101,9 +102,8 @@
 			isa = PBXGroup;
 			children = (
 				000B709220F9EE4E005DE14B /* UInt128Tests.swift */,
-				E218368A20F8F9C000795FDC /* tiny_bigint_swiftTests.swift */,
-				E218368C20F8F9C000795FDC /* Info.plist */,
 				E218369920F8F9F600795FDC /* BigIntTests.swift */,
+				E218368C20F8F9C000795FDC /* Info.plist */,
 			);
 			path = "tiny-bigint-swiftTests";
 			sourceTree = "<group>";
@@ -211,6 +211,7 @@
 			files = (
 				E218367820F8F9BF00795FDC /* ViewController.swift in Sources */,
 				000B709020F93D57005DE14B /* BigUInt128Custom.swift in Sources */,
+				E2AF220920FD730200B4849B /* TinyUInt128.swift in Sources */,
 				E218367620F8F9BF00795FDC /* AppDelegate.swift in Sources */,
 				E218369620F8F9CF00795FDC /* BigInt.swift in Sources */,
 			);
@@ -221,7 +222,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E218369A20F8F9F600795FDC /* BigIntTests.swift in Sources */,
-				E218368B20F8F9C000795FDC /* tiny_bigint_swiftTests.swift in Sources */,
 				000B709320F9EE4E005DE14B /* UInt128Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

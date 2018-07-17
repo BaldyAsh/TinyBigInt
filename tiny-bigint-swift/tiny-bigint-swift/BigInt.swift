@@ -8,7 +8,7 @@
 
 import Foundation
 
-private let maxL = 50
+private let maxL = 256
 
 enum sign: Int {
     case plus = 1

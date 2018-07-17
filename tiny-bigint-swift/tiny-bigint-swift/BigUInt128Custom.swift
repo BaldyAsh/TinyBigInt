@@ -8,6 +8,7 @@
 
 import Foundation
 
+//3 uint32? we should discuss it later. see TinyUint128 file
 public struct BigUInt128Custom {
     
     var internalStorage: (UInt32, UInt32, UInt32)

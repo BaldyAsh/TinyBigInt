@@ -22,4 +22,17 @@ class UInt128Tests: XCTestCase {
     }
     
     
+    func testEqualInt() {
+        let expected = TinyUInt128(firstHalf: 0, secondHalf: 1)
+        let actual = TinyUInt128(Int(1))
+        XCTAssertEqual(expected, actual)
+    }
+    
+    func testCastToInt() {
+        let first = TinyUInt128(firstHalf: 1, secondHalf: UInt64.max)
+        let second = TinyUInt128(firstHalf: 1, secondHalf: 2)
+        let result = first + second
+        XCTAssertEqual(TinyUInt128(firstHalf: 3, secondHalf: 1), result)
+    }
+    
 }
