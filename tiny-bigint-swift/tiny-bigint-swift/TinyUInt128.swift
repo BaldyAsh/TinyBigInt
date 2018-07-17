@@ -37,7 +37,7 @@ public struct TinyUInt128 {
 //        self = number
 //    }
     
-    // MARK: Instance Methods
+    // MARK: Methods
     
     public func addingReportingOverflow(_ rhs: TinyUInt128) -> (partialValue: TinyUInt128, overflow: Bool) {
         let (secondHalf, secondOverflow) = self.storage.secondHalf.addingReportingOverflow(rhs.storage.secondHalf)
@@ -57,7 +57,7 @@ public struct TinyUInt128 {
 }
 
 // MARK: Working with strings
-
+// TODO: Get UInt128 by string is not ready
 extension TinyUInt128 {
     
 //    internal func fromString(_ value: String) -> TinyUInt128 {
