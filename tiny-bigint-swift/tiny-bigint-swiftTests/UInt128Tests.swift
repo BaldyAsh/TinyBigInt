@@ -28,11 +28,17 @@ class UInt128Tests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
-    func testSumWithOverflow() {
+    func testSum1WithOverflow() {
         let first = TinyUInt128(firstHalf: 1, secondHalf: UInt64.max)
         let second = TinyUInt128(firstHalf: 1, secondHalf: 2)
         let result = first + second
         XCTAssertEqual(TinyUInt128(firstHalf: 3, secondHalf: 1), result)
+    }
+    
+    func testSum2WithOverflow() {
+        var num = TinyUInt128(firstHalf: 1, secondHalf: UInt64.max)
+        num += TinyUInt128(firstHalf: 2, secondHalf: 4)
+        XCTAssertEqual(TinyUInt128(firstHalf: 4, secondHalf: 3), num)
     }
     
 }
