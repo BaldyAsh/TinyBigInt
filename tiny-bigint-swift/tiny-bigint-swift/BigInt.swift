@@ -61,6 +61,7 @@
 //
 //    func bigInt() {
 //    }
+Array.init(repeating: <#T##_#>, count: <#T##Int#>)
 //
 //    public mutating func bigInt(_ num: String, decimals: Int = 10) {
 //        var coefN = Array<Int?>(repeating: nil, count: maxL)
