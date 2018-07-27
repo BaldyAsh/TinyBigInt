@@ -40,5 +40,47 @@ class UInt128Tests: XCTestCase {
         num += TinyUInt128(firstHalf: 2, secondHalf: 4)
         XCTAssertEqual(TinyUInt128(firstHalf: 4, secondHalf: 3), num)
     }
+
+    func testComparable1() {
+        let first = TinyUInt128(firstHalf: 1, secondHalf: UInt64.max)
+        let second = TinyUInt128(firstHalf: 1, secondHalf: 2)
+        let result = second < first
+        XCTAssertTrue(result)
+    }
+    
+    func testComparable2() {
+        let first = TinyUInt128(firstHalf: 1, secondHalf: UInt64.max)
+        let second = TinyUInt128(firstHalf: 1, secondHalf: 2)
+        let result = first < second
+        XCTAssertFalse(result)
+    }
+    
+    func testComparable3() {
+        let first = TinyUInt128(firstHalf: 1, secondHalf: UInt64.max)
+        let second = TinyUInt128(firstHalf: 1, secondHalf: 2)
+        let result = second > first
+        XCTAssertFalse(result)
+    }
+    
+    func testComparable4() {
+        let first = TinyUInt128(firstHalf: 1, secondHalf: UInt64.max)
+        let second = TinyUInt128(firstHalf: 1, secondHalf: 2)
+        let result = first > second
+        XCTAssertTrue(result)
+    }
+    
+    func testEquatable1() {
+        let first = TinyUInt128(firstHalf: 1, secondHalf: 2)
+        let second = TinyUInt128(firstHalf: 1, secondHalf: 2)
+        let result = first == second
+        XCTAssertTrue(result)
+    }
+    
+    func testEquatable2() {
+        let first = TinyUInt128(firstHalf: 1, secondHalf: 2)
+        let second = TinyUInt128(firstHalf: 1, secondHalf: 3)
+        let result = first == second
+        XCTAssertFalse(result)
+    }
     
 }

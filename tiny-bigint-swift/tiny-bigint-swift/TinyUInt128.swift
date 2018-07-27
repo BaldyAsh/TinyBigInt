@@ -94,9 +94,18 @@ extension TinyUInt128 {
 
 extension TinyUInt128 : Comparable {
     public static func <(lhs: TinyUInt128, rhs: TinyUInt128) -> Bool {
-        if lhs.storage.firstHalf < rhs.storage.secondHalf {
+        if lhs.storage.firstHalf < rhs.storage.firstHalf {
             return true
         } else if lhs.storage.firstHalf == rhs.storage.firstHalf && lhs.storage.secondHalf < rhs.storage.secondHalf {
+            return true
+        }
+        return false
+    }
+    
+    public static func >(lhs: TinyUInt128, rhs: TinyUInt128) -> Bool {
+        if lhs.storage.firstHalf > rhs.storage.firstHalf {
+            return true
+        } else if lhs.storage.firstHalf == rhs.storage.firstHalf && lhs.storage.secondHalf > rhs.storage.secondHalf {
             return true
         }
         return false
