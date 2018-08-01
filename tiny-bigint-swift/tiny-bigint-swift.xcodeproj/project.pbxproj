@@ -7,13 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		000B709020F93D57005DE14B /* BigUInt128Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000B708F20F93D57005DE14B /* BigUInt128Custom.swift */; };
 		000B709320F9EE4E005DE14B /* UInt128Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000B709220F9EE4E005DE14B /* UInt128Tests.swift */; };
 		E218367620F8F9BF00795FDC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E218367520F8F9BF00795FDC /* AppDelegate.swift */; };
 		E218367D20F8F9C000795FDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E218367C20F8F9C000795FDC /* Assets.xcassets */; };
-		E218369620F8F9CF00795FDC /* BigInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E218369520F8F9CF00795FDC /* BigInt.swift */; };
-		E218369A20F8F9F600795FDC /* BigIntTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E218369920F8F9F600795FDC /* BigIntTests.swift */; };
-		E2AF220920FD730200B4849B /* TinyUInt128.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AF220820FD730200B4849B /* TinyUInt128.swift */; };
+		E272398A2111A02B00BC4FEC /* TinyUInt128BinaryInteger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27239892111A02B00BC4FEC /* TinyUInt128BinaryInteger.swift */; };
+		E272398E2111A08F00BC4FEC /* TinyUInt128Hashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E272398D2111A08F00BC4FEC /* TinyUInt128Hashable.swift */; };
+		E27239902111A0B400BC4FEC /* TinyUInt128Numeric.swift in Sources */ = {isa = PBXBuildFile; fileRef = E272398F2111A0B400BC4FEC /* TinyUInt128Numeric.swift */; };
+		E27239922111A0D600BC4FEC /* TinyUInt128ExpressibleByIntegerLiteral.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27239912111A0D600BC4FEC /* TinyUInt128ExpressibleByIntegerLiteral.swift */; };
+		E27239942111A10000BC4FEC /* TinyUInt128Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27239932111A10000BC4FEC /* TinyUInt128Equatable.swift */; };
+		E27239962111A1D100BC4FEC /* TinyUInt128CustomStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27239952111A1D100BC4FEC /* TinyUInt128CustomStringConvertible.swift */; };
+		E272399A2111A22700BC4FEC /* TinyUInt128Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27239992111A22700BC4FEC /* TinyUInt128Comparable.swift */; };
+		E272399C2111A25200BC4FEC /* TinyUInt128ExpressibleByStringLiteral.swift in Sources */ = {isa = PBXBuildFile; fileRef = E272399B2111A25200BC4FEC /* TinyUInt128ExpressibleByStringLiteral.swift */; };
+		E27239A22111A33F00BC4FEC /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27239A12111A33F00BC4FEC /* StringExtension.swift */; };
+		E2724AB3210B4F1A0070960A /* TinyUInt128Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2724AB2210B4F1A0070960A /* TinyUInt128Errors.swift */; };
+		E2724AB5210B512E0070960A /* TinyUInt128FixedWidthInteger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2724AB4210B512E0070960A /* TinyUInt128FixedWidthInteger.swift */; };
+		E2AF220920FD730200B4849B /* TinyUInt128UnsignedInteger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AF220820FD730200B4849B /* TinyUInt128UnsignedInteger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,7 +35,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		000B708F20F93D57005DE14B /* BigUInt128Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigUInt128Custom.swift; sourceTree = "<group>"; };
 		000B709220F9EE4E005DE14B /* UInt128Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UInt128Tests.swift; sourceTree = "<group>"; };
 		E218367220F8F9BF00795FDC /* tiny-bigint-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tiny-bigint-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E218367520F8F9BF00795FDC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -35,9 +42,18 @@
 		E218368120F8F9C000795FDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E218368620F8F9C000795FDC /* tiny-bigint-swiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "tiny-bigint-swiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E218368C20F8F9C000795FDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E218369520F8F9CF00795FDC /* BigInt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigInt.swift; sourceTree = "<group>"; };
-		E218369920F8F9F600795FDC /* BigIntTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigIntTests.swift; sourceTree = "<group>"; };
-		E2AF220820FD730200B4849B /* TinyUInt128.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinyUInt128.swift; sourceTree = "<group>"; };
+		E27239892111A02B00BC4FEC /* TinyUInt128BinaryInteger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinyUInt128BinaryInteger.swift; sourceTree = "<group>"; };
+		E272398D2111A08F00BC4FEC /* TinyUInt128Hashable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinyUInt128Hashable.swift; sourceTree = "<group>"; };
+		E272398F2111A0B400BC4FEC /* TinyUInt128Numeric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinyUInt128Numeric.swift; sourceTree = "<group>"; };
+		E27239912111A0D600BC4FEC /* TinyUInt128ExpressibleByIntegerLiteral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinyUInt128ExpressibleByIntegerLiteral.swift; sourceTree = "<group>"; };
+		E27239932111A10000BC4FEC /* TinyUInt128Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinyUInt128Equatable.swift; sourceTree = "<group>"; };
+		E27239952111A1D100BC4FEC /* TinyUInt128CustomStringConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinyUInt128CustomStringConvertible.swift; sourceTree = "<group>"; };
+		E27239992111A22700BC4FEC /* TinyUInt128Comparable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinyUInt128Comparable.swift; sourceTree = "<group>"; };
+		E272399B2111A25200BC4FEC /* TinyUInt128ExpressibleByStringLiteral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinyUInt128ExpressibleByStringLiteral.swift; sourceTree = "<group>"; };
+		E27239A12111A33F00BC4FEC /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		E2724AB2210B4F1A0070960A /* TinyUInt128Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinyUInt128Errors.swift; sourceTree = "<group>"; };
+		E2724AB4210B512E0070960A /* TinyUInt128FixedWidthInteger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinyUInt128FixedWidthInteger.swift; sourceTree = "<group>"; };
+		E2AF220820FD730200B4849B /* TinyUInt128UnsignedInteger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinyUInt128UnsignedInteger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,12 +95,10 @@
 		E218367420F8F9BF00795FDC /* tiny-bigint-swift */ = {
 			isa = PBXGroup;
 			children = (
+				E2724AB1210B4EF20070960A /* TinyUInt128 */,
 				E218367520F8F9BF00795FDC /* AppDelegate.swift */,
 				E218367C20F8F9C000795FDC /* Assets.xcassets */,
 				E218368120F8F9C000795FDC /* Info.plist */,
-				E218369520F8F9CF00795FDC /* BigInt.swift */,
-				000B708F20F93D57005DE14B /* BigUInt128Custom.swift */,
-				E2AF220820FD730200B4849B /* TinyUInt128.swift */,
 			);
 			path = "tiny-bigint-swift";
 			sourceTree = "<group>";
@@ -93,10 +107,28 @@
 			isa = PBXGroup;
 			children = (
 				000B709220F9EE4E005DE14B /* UInt128Tests.swift */,
-				E218369920F8F9F600795FDC /* BigIntTests.swift */,
 				E218368C20F8F9C000795FDC /* Info.plist */,
 			);
 			path = "tiny-bigint-swiftTests";
+			sourceTree = "<group>";
+		};
+		E2724AB1210B4EF20070960A /* TinyUInt128 */ = {
+			isa = PBXGroup;
+			children = (
+				E2AF220820FD730200B4849B /* TinyUInt128UnsignedInteger.swift */,
+				E2724AB2210B4F1A0070960A /* TinyUInt128Errors.swift */,
+				E2724AB4210B512E0070960A /* TinyUInt128FixedWidthInteger.swift */,
+				E27239892111A02B00BC4FEC /* TinyUInt128BinaryInteger.swift */,
+				E272398D2111A08F00BC4FEC /* TinyUInt128Hashable.swift */,
+				E272398F2111A0B400BC4FEC /* TinyUInt128Numeric.swift */,
+				E27239912111A0D600BC4FEC /* TinyUInt128ExpressibleByIntegerLiteral.swift */,
+				E27239932111A10000BC4FEC /* TinyUInt128Equatable.swift */,
+				E27239952111A1D100BC4FEC /* TinyUInt128CustomStringConvertible.swift */,
+				E27239992111A22700BC4FEC /* TinyUInt128Comparable.swift */,
+				E272399B2111A25200BC4FEC /* TinyUInt128ExpressibleByStringLiteral.swift */,
+				E27239A12111A33F00BC4FEC /* StringExtension.swift */,
+			);
+			path = TinyUInt128;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,10 +230,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				000B709020F93D57005DE14B /* BigUInt128Custom.swift in Sources */,
-				E2AF220920FD730200B4849B /* TinyUInt128.swift in Sources */,
+				E272399C2111A25200BC4FEC /* TinyUInt128ExpressibleByStringLiteral.swift in Sources */,
+				E2724AB5210B512E0070960A /* TinyUInt128FixedWidthInteger.swift in Sources */,
+				E272398E2111A08F00BC4FEC /* TinyUInt128Hashable.swift in Sources */,
+				E2AF220920FD730200B4849B /* TinyUInt128UnsignedInteger.swift in Sources */,
+				E272398A2111A02B00BC4FEC /* TinyUInt128BinaryInteger.swift in Sources */,
+				E27239A22111A33F00BC4FEC /* StringExtension.swift in Sources */,
+				E27239902111A0B400BC4FEC /* TinyUInt128Numeric.swift in Sources */,
+				E27239962111A1D100BC4FEC /* TinyUInt128CustomStringConvertible.swift in Sources */,
 				E218367620F8F9BF00795FDC /* AppDelegate.swift in Sources */,
-				E218369620F8F9CF00795FDC /* BigInt.swift in Sources */,
+				E2724AB3210B4F1A0070960A /* TinyUInt128Errors.swift in Sources */,
+				E27239942111A10000BC4FEC /* TinyUInt128Equatable.swift in Sources */,
+				E27239922111A0D600BC4FEC /* TinyUInt128ExpressibleByIntegerLiteral.swift in Sources */,
+				E272399A2111A22700BC4FEC /* TinyUInt128Comparable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,7 +250,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E218369A20F8F9F600795FDC /* BigIntTests.swift in Sources */,
 				000B709320F9EE4E005DE14B /* UInt128Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
