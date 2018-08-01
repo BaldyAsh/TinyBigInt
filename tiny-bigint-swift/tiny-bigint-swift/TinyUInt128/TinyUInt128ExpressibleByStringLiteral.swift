@@ -16,7 +16,23 @@ extension TinyUInt128: ExpressibleByStringLiteral {
         let radix = TinyUInt128._determineRadixFromString(storage)
         let inputString = radix == 10 ? storage : String(storage.dropFirst(2))
         
-        return TinyUInt128(inputString, radix: radix)
+        if inputString.count > 128 {
+            return nil
+        }
+        
+        var secondHalfSting: String? = nil
+        var firstHalfString: String? = nil
+        if inputString.count > 64 {
+            firstHalfString = String(inputString.prefix(inputString.count-64))
+            secondHalfSting = String(inputString.suffix(64))
+        }
+        
+        let firstHalf = firstHalfString == nil ? UInt64(0) : UInt64(firstHalfString!)
+        let secondHalf = secondHalfSting == nil ? UInt64(inputString) : UInt64(secondHalfSting!)
+        
+        let result = TinyUInt128(firstHalf: firstHalf!, secondHalf: secondHalf!)
+        
+        return result
     }
     
     internal static func _determineRadixFromString(_ string: String) -> Int {
