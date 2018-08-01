@@ -27,8 +27,12 @@ extension TinyUInt128: ExpressibleByStringLiteral {
             secondHalfSting = String(inputString.suffix(64))
         }
         
-        let firstHalf = firstHalfString == nil ? UInt64(0) : UInt64(firstHalfString!)
-        let secondHalf = secondHalfSting == nil ? UInt64(inputString) : UInt64(secondHalfSting!)
+        let firstHalf: UInt64? = firstHalfString == nil ? UInt64(0) : UInt64(firstHalfString!, radix: radix)
+        let secondHalf: UInt64? = (secondHalfSting == nil ? UInt64(inputString, radix: radix) : UInt64(secondHalfSting!, radix: radix))
+        
+        if firstHalf == nil || secondHalf == nil {
+            return nil
+        }
         
         let result = TinyUInt128(firstHalf: firstHalf!, secondHalf: secondHalf!)
         
