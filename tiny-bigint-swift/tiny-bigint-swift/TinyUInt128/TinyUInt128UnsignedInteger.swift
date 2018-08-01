@@ -31,6 +31,10 @@ public struct TinyUInt128: UnsignedInteger {
         self.init(firstHalf: 0, secondHalf: 0)
     }
     
+    public init(_ value: Int) {
+        self.init(firstHalf: 0, secondHalf: UInt64(value))
+    }
+    
     public init(_ source: TinyUInt128) {
         self.init(firstHalf: source.storage.firstHalf,
                   secondHalf: source.storage.secondHalf)

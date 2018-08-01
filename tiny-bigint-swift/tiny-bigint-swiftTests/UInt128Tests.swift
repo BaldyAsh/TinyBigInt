@@ -12,16 +12,6 @@ import XCTest
 
 class UInt128Tests: XCTestCase {
     
-//    func testAddFunction() {
-//        let first = BigUInt128Custom(numbers: (12, 12, UInt32.max))
-//        let second = BigUInt128Custom(numbers: (12, 12, 2))
-//        let result = first + second
-//        let shouldBe: (UInt32, UInt32, UInt32) = (24, 25, 1)
-//        
-//        XCTAssertEqual(result, BigUInt128Custom(numbers: shouldBe))
-//    }
-    
-    
     func testEqualInitInt() {
         let expected = TinyUInt128(firstHalf: 0, secondHalf: 1)
         let actual = TinyUInt128(Int(1))
