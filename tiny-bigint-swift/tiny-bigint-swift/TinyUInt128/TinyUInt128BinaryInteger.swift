@@ -49,6 +49,30 @@ extension TinyUInt128: BinaryInteger {
         lhs = lhs % rhs
     }
     
+    // AND
+    public static func &=(lhs: inout TinyUInt128, rhs: TinyUInt128) {
+        let firstHalf = lhs.storage.firstHalf & rhs.storage.firstHalf
+        let secondHalf = lhs.storage.secondHalf & rhs.storage.secondHalf
+        
+        lhs = TinyUInt128(firstHalf: firstHalf, secondHalf: secondHalf)
+    }
+    
+    // OR
+    public static func |=(lhs: inout TinyUInt128, rhs: TinyUInt128) {
+        let firstHalf = lhs.storage.firstHalf | rhs.storage.firstHalf
+        let secondHalf = lhs.storage.secondHalf | rhs.storage.secondHalf
+        
+        lhs = TinyUInt128(firstHalf: firstHalf, secondHalf: secondHalf)
+    }
+    
+    // XOR
+    public static func ^=(lhs: inout TinyUInt128, rhs: TinyUInt128) {
+        let firstHalf = lhs.storage.firstHalf ^ rhs.storage.firstHalf
+        let secondHalf = lhs.storage.secondHalf ^ rhs.storage.secondHalf
+        
+        lhs = TinyUInt128(firstHalf: firstHalf, secondHalf: secondHalf)
+    }
+    
     
     // Masked right shift operation. 128 -> 0, 129 -> 1
     public static func &>>=(lhs: inout TinyUInt128, rhs: TinyUInt128) {

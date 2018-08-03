@@ -24,4 +24,30 @@ class UInt128TestsBinaryOperations: XCTestCase {
         XCTAssertEqual(TinyUInt128(firstHalf: 4, secondHalf: 3), num)
     }
     
+    func testMultiple1() {
+        let first = TinyUInt128(firstHalf: 0, secondHalf: 2)
+        let second = TinyUInt128(firstHalf: 0, secondHalf: 3)
+        let result = first * second
+        XCTAssertEqual(TinyUInt128(firstHalf: 0, secondHalf: 6), result)
+    }
+    
+    func testMultiple2() {
+        var num = TinyUInt128(firstHalf: 0, secondHalf: 2)
+        num *= TinyUInt128(firstHalf: 0, secondHalf: 3)
+        XCTAssertEqual(TinyUInt128(firstHalf: 0, secondHalf: 6), num)
+    }
+    
+    func testDivide1() {
+        let first = TinyUInt128(firstHalf: 0, secondHalf: 6)
+        let second = TinyUInt128(firstHalf: 0, secondHalf: 3)
+        let result = first / second
+        XCTAssertEqual(TinyUInt128(firstHalf: 0, secondHalf: 2), result)
+    }
+    
+    func testDivide2() {
+        var num = TinyUInt128(firstHalf: 0, secondHalf: 6)
+        num /= TinyUInt128(firstHalf: 0, secondHalf: 3)
+        XCTAssertEqual(TinyUInt128(firstHalf: 0, secondHalf: 2), num)
+    }
+    
 }
