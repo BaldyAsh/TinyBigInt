@@ -39,4 +39,18 @@ class UInt128TestsComparable: XCTestCase {
         XCTAssertTrue(result)
     }
     
+    func testComparable5() {
+        let first = TinyUInt128(firstHalf: 1, secondHalf: UInt64.max)
+        let second = TinyUInt128(firstHalf: 1, secondHalf: 2)
+        let result = first <= second
+        XCTAssertFalse(result)
+    }
+    
+    func testComparable6() {
+        let first = TinyUInt128(firstHalf: 1, secondHalf: UInt64.max)
+        let second = TinyUInt128(firstHalf: 1, secondHalf: 2)
+        let result = first >= second
+        XCTAssertTrue(result)
+    }
+    
 }

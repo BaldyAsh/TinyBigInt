@@ -29,4 +29,9 @@ class UInt128TestsInit: XCTestCase {
         XCTAssertEqual(actual, expected)
     }
     
+    func testInitLiteralString() {
+        let expected = TinyUInt128(firstHalf: 0, secondHalf: 1)
+        let actual: TinyUInt128 = "1"
+        XCTAssertEqual(actual, expected)
+    }
 }

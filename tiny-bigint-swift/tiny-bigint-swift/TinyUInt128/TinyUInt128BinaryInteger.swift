@@ -28,23 +28,6 @@ extension TinyUInt128: BinaryInteger {
         return storage.secondHalf.trailingZeroBitCount
     }
     
-    // MARK: - Initializers
-    public init?<T: BinaryFloatingPoint>(exactly source: T) {
-        if source.isZero {
-            self = TinyUInt128()
-        }
-        else if source.exponent < 0 || source.rounded() != source {
-            return nil
-        }
-        else {
-            self = TinyUInt128(UInt64(source))
-        }
-    }
-    
-    public init<T: BinaryFloatingPoint>(_ source: T) {
-        self.init(UInt64(source))
-    }
-    
     // MARK: Methods
     public static func /(lhs: TinyUInt128, rhs: TinyUInt128) -> TinyUInt128 {
         let result = lhs.dividedReportingOverflow(by: rhs)
