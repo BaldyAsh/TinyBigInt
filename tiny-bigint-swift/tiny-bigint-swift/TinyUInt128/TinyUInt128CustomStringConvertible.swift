@@ -28,7 +28,6 @@ extension TinyUInt128: CustomStringConvertible {
             return "0"
         }
         
-        
         var result = String()
         
         // For string interpolation
