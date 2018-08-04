@@ -22,17 +22,14 @@ extension TinyUInt128: BinaryInteger {
     }
     
     public var trailingZeroBitCount: Int {
-        if storage.secondHalf == 0 {
-            return UInt64.bitWidth + storage.firstHalf.trailingZeroBitCount
-        }
-        return storage.secondHalf.trailingZeroBitCount
+        return storage.secondHalf == 0 ?
+            UInt64.bitWidth + storage.firstHalf.trailingZeroBitCount :
+            storage.secondHalf.trailingZeroBitCount
     }
     
     // MARK: Methods
     public static func /(lhs: TinyUInt128, rhs: TinyUInt128) -> TinyUInt128 {
-        let result = lhs.dividedReportingOverflow(by: rhs)
-        
-        return result.partialValue
+        return lhs.dividedReportingOverflow(by: rhs).partialValue
     }
     
     public static func /=(lhs: inout TinyUInt128, rhs: TinyUInt128) {
@@ -40,9 +37,7 @@ extension TinyUInt128: BinaryInteger {
     }
     
     public static func %(lhs: TinyUInt128, rhs: TinyUInt128) -> TinyUInt128 {
-        let result = lhs.remainderReportingOverflow(dividingBy: rhs)
-        
-        return result.partialValue
+        return lhs.remainderReportingOverflow(dividingBy: rhs).partialValue
     }
     
     public static func %=(lhs: inout TinyUInt128, rhs: TinyUInt128) {
@@ -53,7 +48,6 @@ extension TinyUInt128: BinaryInteger {
     public static func &=(lhs: inout TinyUInt128, rhs: TinyUInt128) {
         let firstHalf = lhs.storage.firstHalf & rhs.storage.firstHalf
         let secondHalf = lhs.storage.secondHalf & rhs.storage.secondHalf
-        
         lhs = TinyUInt128(firstHalf: firstHalf, secondHalf: secondHalf)
     }
     
@@ -61,7 +55,6 @@ extension TinyUInt128: BinaryInteger {
     public static func |=(lhs: inout TinyUInt128, rhs: TinyUInt128) {
         let firstHalf = lhs.storage.firstHalf | rhs.storage.firstHalf
         let secondHalf = lhs.storage.secondHalf | rhs.storage.secondHalf
-        
         lhs = TinyUInt128(firstHalf: firstHalf, secondHalf: secondHalf)
     }
     
@@ -69,16 +62,13 @@ extension TinyUInt128: BinaryInteger {
     public static func ^=(lhs: inout TinyUInt128, rhs: TinyUInt128) {
         let firstHalf = lhs.storage.firstHalf ^ rhs.storage.firstHalf
         let secondHalf = lhs.storage.secondHalf ^ rhs.storage.secondHalf
-        
         lhs = TinyUInt128(firstHalf: firstHalf, secondHalf: secondHalf)
     }
     
     
     // Masked right shift operation. 128 -> 0, 129 -> 1
     public static func &>>=(lhs: inout TinyUInt128, rhs: TinyUInt128) {
-        
         let shift = rhs.storage.secondHalf & 127
-        
         switch shift {
         case 0:
             return
@@ -97,9 +87,7 @@ extension TinyUInt128: BinaryInteger {
     
     /// Masked left shift operation. 128 -> 0, 129 -> 1
     public static func &<<=(lhs: inout TinyUInt128, rhs: TinyUInt128) {
-        
         let shift = rhs.storage.secondHalf & 127
-        
         switch shift {
         case 0:
             return // Do nothing shift

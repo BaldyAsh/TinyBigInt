@@ -13,7 +13,9 @@ extension TinyUInt128: ExpressibleByStringLiteral {
     
     internal static func valueFromString(_ storage: String) -> TinyUInt128? {
         
-        let result = (TinyUInt128._determineRadixFromString(storage) == 10) ? storage : String(storage.dropFirst(2))
+        let result = (TinyUInt128._determineRadixFromString(storage) == 10) ?
+            storage :
+            String(storage.dropFirst(2))
         
         return TinyUInt128(result, radix: TinyUInt128._determineRadixFromString(storage))
     }

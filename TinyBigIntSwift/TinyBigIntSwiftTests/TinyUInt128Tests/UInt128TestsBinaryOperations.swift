@@ -92,4 +92,11 @@ class UInt128TestsBinaryOperations: XCTestCase {
         XCTAssertTrue(result.overflow)
     }
     
+    func testDivide4() {
+        let first = TinyUInt128(firstHalf: 0, secondHalf: 0)
+        let second = TinyUInt128(firstHalf: 0, secondHalf: 3)
+        let result = first / second
+        XCTAssertEqual(TinyUInt128(firstHalf: 0, secondHalf: 0), result)
+    }
+    
 }

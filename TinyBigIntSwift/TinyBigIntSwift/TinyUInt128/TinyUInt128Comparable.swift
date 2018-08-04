@@ -16,8 +16,9 @@ extension TinyUInt128: Comparable {
             return true
         } else if lhs.storage.firstHalf == rhs.storage.firstHalf && lhs.storage.secondHalf < rhs.storage.secondHalf {
             return true
+        } else {
+            return false
         }
-        return false
     }
     
     public static func >(lhs: TinyUInt128, rhs: TinyUInt128) -> Bool {
@@ -25,8 +26,9 @@ extension TinyUInt128: Comparable {
             return true
         } else if lhs.storage.firstHalf == rhs.storage.firstHalf && lhs.storage.secondHalf > rhs.storage.secondHalf {
             return true
+        } else {
+            return false
         }
-        return false
     }
     
     public static func <=(lhs: TinyUInt128, rhs: TinyUInt128) -> Bool {
@@ -34,8 +36,9 @@ extension TinyUInt128: Comparable {
             return false
         } else if lhs.storage.firstHalf == rhs.storage.firstHalf && lhs.storage.secondHalf > rhs.storage.secondHalf {
             return false
+        } else {
+            return true
         }
-        return true
     }
     
     public static func >=(lhs: TinyUInt128, rhs: TinyUInt128) -> Bool {

@@ -8,7 +8,6 @@
 
 public struct TinyUInt128: UnsignedInteger {
     
-    
     // We contain UInt128 in two UInt64
     internal var storage: (firstHalf: UInt64, secondHalf: UInt64)
     

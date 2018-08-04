@@ -14,19 +14,15 @@ import Darwin
 extension TinyUInt128: FixedWidthInteger {
     
     public var nonzeroBitCount: Int {
-        
         return storage.secondHalf.nonzeroBitCount + storage.firstHalf.nonzeroBitCount
-        
     }
     
     public var leadingZeroBitCount: Int {
-        
         if storage.firstHalf == 0 {
             return UInt64.bitWidth + storage.secondHalf.leadingZeroBitCount
         } else {
             return storage.firstHalf.leadingZeroBitCount
         }
-        
     }
     
     public var bigEndian: TinyUInt128 {
@@ -38,10 +34,8 @@ extension TinyUInt128: FixedWidthInteger {
     }
     
     public var byteSwapped: TinyUInt128 {
-        
         return TinyUInt128(firstHalf: self.storage.secondHalf.byteSwapped,
                            secondHalf: self.storage.firstHalf.byteSwapped)
-        
     }
     
     // MARK: - Initializers

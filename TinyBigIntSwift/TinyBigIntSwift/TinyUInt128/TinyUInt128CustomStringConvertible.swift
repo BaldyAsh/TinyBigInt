@@ -23,11 +23,6 @@ extension TinyUInt128: CustomStringConvertible {
             exit(0) // radix must be in 2...36
         }
         
-        
-        if self == 0 {
-            return "0"
-        }
-        
         var result = String()
         
         // For string interpolation
