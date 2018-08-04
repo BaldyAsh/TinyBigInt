@@ -36,6 +36,8 @@
 		E21F14EE2115E59C00E57947 /* TinyUInt256Numeric.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21F14E32115E59C00E57947 /* TinyUInt256Numeric.swift */; };
 		E21F14EF2115E59C00E57947 /* TinyUInt256Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21F14E42115E59C00E57947 /* TinyUInt256Equatable.swift */; };
 		E21F14F02115E59C00E57947 /* TinyUInt256UnsignedInteger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21F14E52115E59C00E57947 /* TinyUInt256UnsignedInteger.swift */; };
+		E21F15532115F14C00E57947 /* UInt256TestsInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21F15522115F14C00E57947 /* UInt256TestsInit.swift */; };
+		E21F15552115F19400E57947 /* UInt256TestsBinaryOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21F15542115F19400E57947 /* UInt256TestsBinaryOperations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +83,8 @@
 		E21F14E32115E59C00E57947 /* TinyUInt256Numeric.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TinyUInt256Numeric.swift; sourceTree = "<group>"; };
 		E21F14E42115E59C00E57947 /* TinyUInt256Equatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TinyUInt256Equatable.swift; sourceTree = "<group>"; };
 		E21F14E52115E59C00E57947 /* TinyUInt256UnsignedInteger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TinyUInt256UnsignedInteger.swift; sourceTree = "<group>"; };
+		E21F15522115F14C00E57947 /* UInt256TestsInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UInt256TestsInit.swift; sourceTree = "<group>"; };
+		E21F15542115F19400E57947 /* UInt256TestsBinaryOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UInt256TestsBinaryOperations.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +139,7 @@
 		E21F14A82115D43700E57947 /* TinyBigIntSwiftTests */ = {
 			isa = PBXGroup;
 			children = (
+				E21F15512115F0AD00E57947 /* TinyUInt256Tests */,
 				E21F14CE2115D49200E57947 /* TinyUInt128Tests */,
 				E21F14AB2115D43800E57947 /* Info.plist */,
 			);
@@ -194,6 +199,15 @@
 				E21F14BF2115D47500E57947 /* StringExtension.swift */,
 			);
 			path = StandartTypesTinyBigIntExtensions;
+			sourceTree = "<group>";
+		};
+		E21F15512115F0AD00E57947 /* TinyUInt256Tests */ = {
+			isa = PBXGroup;
+			children = (
+				E21F15522115F14C00E57947 /* UInt256TestsInit.swift */,
+				E21F15542115F19400E57947 /* UInt256TestsBinaryOperations.swift */,
+			);
+			path = TinyUInt256Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,6 +353,8 @@
 				E21F14D62115D4AA00E57947 /* UInt128TestsComparable.swift in Sources */,
 				E21F14D42115D4AA00E57947 /* UInt128TestsEquatable.swift in Sources */,
 				E21F14D52115D4AA00E57947 /* UInt128TestsInit.swift in Sources */,
+				E21F15552115F19400E57947 /* UInt256TestsBinaryOperations.swift in Sources */,
+				E21F15532115F14C00E57947 /* UInt256TestsInit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
