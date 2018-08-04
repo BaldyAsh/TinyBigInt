@@ -100,9 +100,9 @@ extension TinyUInt256: FixedWidthInteger {
     
     public func multipliedFullWidth(by other: TinyUInt256) -> (high: TinyUInt256, low: TinyUInt256.Magnitude) {
         
-        let second32 = TinyUInt128(UInt32.max) //mask second 32 bits of TinyUInt128
+        let second64 = TinyUInt128(UInt64.max) //mask second 64 bits of TinyUInt128
         
-        // Get arrays of 4x 32bit TinyUInt128
+        // Get arrays of 4x 64bit TinyUInt128
         
         var result = [[TinyUInt128]](repeating: [TinyUInt128](repeating: 0, count: 4), count: 4)
         
@@ -119,16 +119,16 @@ extension TinyUInt256: FixedWidthInteger {
 //        result: {(BIT1,BIT2) (BIT2,BIT3,BIT4)} {(BIT4,BIT5,BIT6) (BIT6,BIT7)}
  
         // L0,L1,L2,L3
-        let lhsArray = [self.storage.firstHalf >> 32,
-                        self.storage.firstHalf & second32,
-                        self.storage.secondHalf >> 32,
-                        self.storage.secondHalf & second32]
+        let lhsArray = [self.storage.firstHalf >> 64,
+                        self.storage.firstHalf & second64,
+                        self.storage.secondHalf >> 64,
+                        self.storage.secondHalf & second64]
         
         // R0,R1,R2,R3
-        let rhsArray = [other.storage.firstHalf >> 32,
-                        other.storage.firstHalf & second32,
-                        other.storage.secondHalf >> 32,
-                        other.storage.secondHalf & second32]
+        let rhsArray = [other.storage.firstHalf >> 64,
+                        other.storage.firstHalf & second64,
+                        other.storage.secondHalf >> 64,
+                        other.storage.secondHalf & second64]
         
         // Multiplication of every part: L0R0, L1R0, L2R0, ... , L3R3
         for rhsSegment in 0 ..< rhsArray.count {
@@ -139,65 +139,65 @@ extension TinyUInt256: FixedWidthInteger {
         }
         
         // addition like on scheme
-        let bit7 = result[3][3] & second32
+        let bit7 = result[3][3] & second64
         let bit6 = TinyUInt256.variadicAdditionWithOverflowCount(
-            result[2][3] & second32,
-            result[3][2] & second32,
-            result[3][3] >> 32) // overflow from bit7
+            result[2][3] & second64,
+            result[3][2] & second64,
+            result[3][3] >> 64) // overflow from bit7
         let bit5 = TinyUInt256.variadicAdditionWithOverflowCount(
-            result[1][3] & second32,
-            result[2][2] & second32,
-            result[3][1] & second32,
-            result[2][3] >> 32, // overflow from bit6
-            result[3][2] >> 32, // overflow from bit6
+            result[1][3] & second64,
+            result[2][2] & second64,
+            result[3][1] & second64,
+            result[2][3] >> 64, // overflow from bit6
+            result[3][2] >> 64, // overflow from bit6
             bit6.overflowCount)
         let bit4 = TinyUInt256.variadicAdditionWithOverflowCount(
-            result[0][3] & second32,
-            result[1][2] & second32,
-            result[2][1] & second32,
-            result[3][0] & second32,
-            result[1][3] >> 32, // overflow from bit5
-            result[2][2] >> 32, // overflow from bit5
-            result[3][1] >> 32, // overflow from bit5
+            result[0][3] & second64,
+            result[1][2] & second64,
+            result[2][1] & second64,
+            result[3][0] & second64,
+            result[1][3] >> 64, // overflow from bit5
+            result[2][2] >> 64, // overflow from bit5
+            result[3][1] >> 64, // overflow from bit5
             bit5.overflowCount)
         let bit3 = TinyUInt256.variadicAdditionWithOverflowCount(
-            result[0][2] & second32,
-            result[1][1] & second32,
-            result[2][0] & second32,
-            result[0][3] >> 32, // overflow from bit4
-            result[1][2] >> 32, // overflow from bit4
-            result[2][1] >> 32, // overflow from bit4
-            result[3][0] >> 32, // overflow from bit4
+            result[0][2] & second64,
+            result[1][1] & second64,
+            result[2][0] & second64,
+            result[0][3] >> 64, // overflow from bit4
+            result[1][2] >> 64, // overflow from bit4
+            result[2][1] >> 64, // overflow from bit4
+            result[3][0] >> 64, // overflow from bit4
             bit4.overflowCount)
         let bit2 = TinyUInt256.variadicAdditionWithOverflowCount(
-            result[0][1] & second32,
-            result[1][0] & second32,
-            result[0][2] >> 32, // overflow from bit3
-            result[1][1] >> 32, // overflow from bit3
-            result[2][0] >> 32, // overflow from bit3
+            result[0][1] & second64,
+            result[1][0] & second64,
+            result[0][2] >> 64, // overflow from bit3
+            result[1][1] >> 64, // overflow from bit3
+            result[2][0] >> 64, // overflow from bit3
             bit3.overflowCount)
         let bit1 = TinyUInt256.variadicAdditionWithOverflowCount(
             result[0][0],
-            result[0][1] >> 32, // overflow from bit2
-            result[1][0] >> 32, // overflow from bit2
+            result[0][1] >> 64, // overflow from bit2
+            result[1][0] >> 64, // overflow from bit2
             bit2.overflowCount)
         
-        // 64 bit
+        // 128 bit
         let secondSecondBits = TinyUInt256.variadicAdditionWithOverflowCount(
             bit7,
-            bit6.truncatedValue << 32)
+            bit6.truncatedValue << 64)
         let firstSecondBits = TinyUInt256.variadicAdditionWithOverflowCount(
-            bit6.truncatedValue >> 32,
+            bit6.truncatedValue >> 64,
             bit5.truncatedValue,
-            bit4.truncatedValue << 32,
+            bit4.truncatedValue << 64,
             secondSecondBits.overflowCount)
         let secondFirstBits = TinyUInt256.variadicAdditionWithOverflowCount(
-            bit4.truncatedValue >> 32,
+            bit4.truncatedValue >> 64,
             bit3.truncatedValue,
-            bit2.truncatedValue << 32,
+            bit2.truncatedValue << 64,
             firstSecondBits.overflowCount)
         let firstFirstBits = TinyUInt256.variadicAdditionWithOverflowCount(
-            bit2.truncatedValue >> 32,
+            bit2.truncatedValue >> 64,
             bit1.truncatedValue,
             secondFirstBits.overflowCount)
         

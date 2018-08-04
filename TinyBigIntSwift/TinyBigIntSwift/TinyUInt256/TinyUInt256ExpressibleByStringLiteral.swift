@@ -16,15 +16,15 @@ extension TinyUInt256: ExpressibleByStringLiteral {
         let radix = TinyUInt256._determineRadixFromString(storage)
         let inputString = radix == 10 ? storage : String(storage.dropFirst(2))
         
-        if inputString.count > 128 {
+        if inputString.count > 256 {
             return nil
         }
         
         var secondHalfSting: String? = nil
         var firstHalfString: String? = nil
-        if inputString.count > 64 {
-            firstHalfString = String(inputString.prefix(inputString.count-64))
-            secondHalfSting = String(inputString.suffix(64))
+        if inputString.count > 128 {
+            firstHalfString = String(inputString.prefix(inputString.count-128))
+            secondHalfSting = String(inputString.suffix(128))
         }
         
         let firstHalf: TinyUInt128? = firstHalfString == nil ? TinyUInt128(0) : TinyUInt128(firstHalfString!, radix: radix)
