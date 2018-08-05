@@ -18,7 +18,13 @@ extension TinyUInt128 {
 extension TinyUInt128: BinaryInteger {
     
     public var words: [UInt] {
-        return Array(storage.secondHalf.words) + Array(storage.firstHalf.words)
+        get {
+            return Array(storage.secondHalf.words) + Array(storage.firstHalf.words)
+        }
+    }
+    
+    public static var isSigned: Bool {
+        return false
     }
     
     public var trailingZeroBitCount: Int {

@@ -18,28 +18,33 @@ extension TinyUInt256 {
 extension TinyUInt256: BinaryInteger {
     
     public var words: [UInt] {
-        
-        if self == TinyUInt256.min {
-            return [0]
-        }
-        
-        var arrayOfWords: [UInt] = []
-        
-        for word in 0...self.bitWidth/UInt.bitWidth {
-            let shift = TinyUInt128(UInt.bitWidth)*TinyUInt128(word)
-            let mask = TinyUInt128(UInt.max)
-            var wordWithShift = self
-            
-            if shift > 0 {
-                wordWithShift &>>= TinyUInt256(firstHalf: 0, secondHalf: shift)
+        get {
+            if self == TinyUInt256.min {
+                return [0]
             }
             
-            let wordWithMask = wordWithShift & TinyUInt256(firstHalf: 0, secondHalf: mask)
+            var arrayOfWords: [UInt] = []
             
-            arrayOfWords.append(UInt(wordWithMask.storage.secondHalf))
-        }
-        
-        return arrayOfWords
+            for word in 0...self.bitWidth/UInt.bitWidth {
+                let shift = TinyUInt128(UInt.bitWidth)*TinyUInt128(word)
+                let mask = TinyUInt128(UInt.max)
+                var wordWithShift = self
+                
+                if shift > 0 {
+                    wordWithShift &>>= TinyUInt256(firstHalf: 0, secondHalf: shift)
+                }
+                
+                let wordWithMask = wordWithShift & TinyUInt256(firstHalf: 0, secondHalf: mask)
+                
+                arrayOfWords.append(UInt(wordWithMask.storage.secondHalf))
+            }
+            
+            return arrayOfWords
+        } 
+    }
+    
+    public static var isSigned: Bool {
+        return false
     }
     
     public var trailingZeroBitCount: Int {
