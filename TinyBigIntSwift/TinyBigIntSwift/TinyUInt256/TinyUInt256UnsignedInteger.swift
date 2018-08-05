@@ -13,12 +13,29 @@ public struct TinyUInt256: UnsignedInteger {
     internal var storage: (firstHalf: TinyUInt128, secondHalf: TinyUInt128)
     
     public var significantBits: TinyUInt256 {
-        return TinyUInt256(TinyUInt256.bitWidth - leadingZeroBitCount)
+        var bits: TinyUInt256 = 0
+        var shift: TinyUInt128 = 0
+        if self.storage.firstHalf == 0 && self.storage.secondHalf == 0 {
+            return bits
+        }
+        
+        shift = self.storage.firstHalf > 0 ?
+            self.storage.firstHalf :
+            self.storage.secondHalf
+        
+        bits = self.storage.firstHalf > 0 ? 64 : 0
+        
+        repeat {
+            bits += 1
+            shift >>= 1
+        } while shift > 0
+        
+        return bits
     }
     
     // BinaryFloatingPoint type passing
     internal var signBitIndex: Int {
-        return 127 - leadingZeroBitCount
+        return 255 - leadingZeroBitCount
     }
     
     // MARK: Initializers

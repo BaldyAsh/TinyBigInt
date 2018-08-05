@@ -18,14 +18,42 @@ extension TinyUInt256 {
 extension TinyUInt256: BinaryInteger {
     
     public var words: [UInt] {
-        return Array(storage.secondHalf.words) + Array(storage.firstHalf.words)
+        
+        if self == TinyUInt256.min {
+            return [0]
+        }
+        
+        var arrayOfWords: [UInt] = []
+        
+        for word in 0...self.bitWidth/UInt.bitWidth {
+            let shift = TinyUInt128(UInt.bitWidth)*TinyUInt128(word)
+            let mask = TinyUInt128(UInt.max)
+            var wordWithShift = self
+            
+            if shift > 0 {
+                wordWithShift &>>= TinyUInt256(firstHalf: 0, secondHalf: shift)
+            }
+            
+            let wordWithMask = wordWithShift & TinyUInt256(firstHalf: 0, secondHalf: mask)
+            
+            arrayOfWords.append(UInt(wordWithMask.storage.secondHalf))
+        }
+        
+        return arrayOfWords
     }
     
     public var trailingZeroBitCount: Int {
-        if storage.secondHalf == 0 {
-            return TinyUInt128.bitWidth + storage.firstHalf.trailingZeroBitCount
+        
+        var shift = self
+        
+        for bit in 0...256 {
+            if shift & TinyUInt256(1) == 1 {
+                return bit
+            }
+            shift >>= 1
         }
-        return storage.secondHalf.trailingZeroBitCount
+        
+        return 256
     }
     
     // MARK: Methods
@@ -82,7 +110,7 @@ extension TinyUInt256: BinaryInteger {
         switch shift {
         case 0:
             return
-        case 1...128:
+        case 1...127:
             let firstHalf = lhs.storage.firstHalf >> shift
             let secondHalf = (lhs.storage.secondHalf >> shift) + (lhs.storage.firstHalf << (128 - shift))
             lhs = TinyUInt256(firstHalf: firstHalf, secondHalf: secondHalf)
@@ -103,7 +131,7 @@ extension TinyUInt256: BinaryInteger {
         switch shift {
         case 0:
             return // Do nothing shift
-        case 1...128:
+        case 1...127:
             let firstHalf = (lhs.storage.firstHalf << shift) + (lhs.storage.secondHalf >> (128 - shift))
             let secondHalf = lhs.storage.secondHalf << shift
             lhs = TinyUInt256(firstHalf: firstHalf, secondHalf: secondHalf)

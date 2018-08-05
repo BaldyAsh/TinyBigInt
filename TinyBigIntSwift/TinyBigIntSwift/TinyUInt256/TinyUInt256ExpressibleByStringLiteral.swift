@@ -14,29 +14,11 @@ extension TinyUInt256: ExpressibleByStringLiteral {
     internal static func valueFromString(_ storage: String) -> TinyUInt256? {
         
         let radix = TinyUInt256._determineRadixFromString(storage)
-        let inputString = radix == 10 ? storage : String(storage.dropFirst(2))
+        let inputString = radix == 10 ?
+            storage :
+            String(storage.dropFirst(2))
         
-        if inputString.count > 256 {
-            return nil
-        }
-        
-        var secondHalfSting: String? = nil
-        var firstHalfString: String? = nil
-        if inputString.count > 128 {
-            firstHalfString = String(inputString.prefix(inputString.count-128))
-            secondHalfSting = String(inputString.suffix(128))
-        }
-        
-        let firstHalf: TinyUInt128? = firstHalfString == nil ? TinyUInt128(0) : TinyUInt128(firstHalfString!, radix: radix)
-        let secondHalf: TinyUInt128? = (secondHalfSting == nil ? TinyUInt128(inputString, radix: radix) : TinyUInt128(secondHalfSting!, radix: radix))
-        
-        if firstHalf == nil || secondHalf == nil {
-            return nil
-        }
-        
-        let result = TinyUInt256(firstHalf: firstHalf!, secondHalf: secondHalf!)
-        
-        return result
+        return TinyUInt256(inputString, radix: radix)
     }
     
     internal static func _determineRadixFromString(_ string: String) -> Int {

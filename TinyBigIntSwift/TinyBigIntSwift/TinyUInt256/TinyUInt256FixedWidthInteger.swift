@@ -14,18 +14,25 @@ import Darwin
 extension TinyUInt256: FixedWidthInteger {
     
     public var nonzeroBitCount: Int {
-        
         return storage.secondHalf.nonzeroBitCount + storage.firstHalf.nonzeroBitCount
-        
     }
     
     public var leadingZeroBitCount: Int {
         
-        if storage.firstHalf == 0 {
-            return TinyUInt128.bitWidth + storage.secondHalf.leadingZeroBitCount
-        } else {
-            return storage.firstHalf.leadingZeroBitCount
-        }
+        var count = 0
+        var shift = 127
+        
+        repeat {
+            let bit = self &>> 127
+            if bit == 0 {
+                count += 1
+                shift -= 1
+            } else {
+                break
+            }
+        } while shift > 0
+        
+        return count
         
     }
     
@@ -224,14 +231,12 @@ extension TinyUInt256: FixedWidthInteger {
     
     // MARK: - Divide
     public func dividedReportingOverflow(by rhs: TinyUInt256) -> (partialValue: TinyUInt256, overflow: Bool) {
-        
         if rhs == 0 {
             return (self, true)
         } else {
             let quotient = self.quotientAndRemainder(dividingBy: rhs).quotient
             return (quotient, false)
         }
-        
     }
     
     public func dividingFullWidth(_ dividend: (high: TinyUInt256, low: TinyUInt256)) -> (quotient: TinyUInt256, remainder: TinyUInt256) {
@@ -258,7 +263,7 @@ extension TinyUInt256: FixedWidthInteger {
         var numeratorLength: TinyUInt256
         
         if dividend.high > 0 {
-            numeratorLength = dividend.high.significantBits + 128 - 1
+            numeratorLength = dividend.high.significantBits + 256 - 1
         } else if dividend.low == 0 {
             return (0, 0)
         } else {
