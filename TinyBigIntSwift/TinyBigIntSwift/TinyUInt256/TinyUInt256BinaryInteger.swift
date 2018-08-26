@@ -107,10 +107,10 @@ extension TinyUInt256: BinaryInteger {
     }
     
     
-    // Masked right shift operation. 128 -> 0, 129 -> 1
+    // Masked right shift operation. 256 -> 0, 257 -> 1
     public static func &>>=(lhs: inout TinyUInt256, rhs: TinyUInt256) {
         
-        let shift = rhs.storage.secondHalf.storage.secondHalf & rhs.storage.secondHalf.storage.firstHalf & 255
+        let shift = rhs.storage.secondHalf & 255
         
         switch shift {
         case 0:
@@ -128,10 +128,10 @@ extension TinyUInt256: BinaryInteger {
         }
     }
     
-    /// Masked left shift operation. 128 -> 0, 129 -> 1
+    /// Masked left shift operation. 256 -> 0, 257 -> 1
     public static func &<<=(lhs: inout TinyUInt256, rhs: TinyUInt256) {
         
-        let shift = rhs.storage.secondHalf.storage.secondHalf & rhs.storage.secondHalf.storage.firstHalf & 255
+        let shift = rhs.storage.secondHalf & 255
         
         switch shift {
         case 0:
