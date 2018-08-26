@@ -234,12 +234,13 @@ extension TinyUInt128: FixedWidthInteger {
     
     public func remainderReportingOverflow(dividingBy rhs: TinyUInt128) -> (partialValue: TinyUInt128, overflow: Bool) {
         
-        guard rhs != 0 else {
+        if rhs == 0 {
             return (self, true)
+        } else {
+            let remainder = self.quotientAndRemainder(dividingBy: rhs).remainder
+            return (remainder, false)
         }
         
-        let remainder = self.quotientAndRemainder(dividingBy: rhs).remainder
-        return (remainder, false)
     }
     
     public func quotientAndRemainder(dividingBy rhs: TinyUInt128) -> (quotient: TinyUInt128, remainder: TinyUInt128) {
