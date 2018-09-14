@@ -35,4 +35,9 @@ class UInt256TestsInit: XCTestCase {
         XCTAssertEqual(actual, expected)
     }
     
+    func testInitStringWithRandomRadix() {
+        let expected = TinyUInt256(firstHalf: 0, secondHalf: 6467)
+        let actual: TinyUInt256 = TinyUInt256("1567", radix: 17)!
+        XCTAssertEqual(actual, expected)
+    }
 }
