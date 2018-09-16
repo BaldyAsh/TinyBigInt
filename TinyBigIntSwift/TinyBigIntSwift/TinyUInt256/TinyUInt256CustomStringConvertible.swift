@@ -19,10 +19,6 @@ extension TinyUInt256: CustomStringConvertible {
     
     internal func valueToString(radix: Int = 10, uppercase: Bool = true) -> String {
         
-        if !((2...36) ~= radix) {
-            exit(0) // radix must be in 2...36
-        }
-        
         var result = String()
         
         // For string interpolation
