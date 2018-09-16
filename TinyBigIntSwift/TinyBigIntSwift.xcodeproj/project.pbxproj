@@ -23,6 +23,21 @@
 		914F231B214EE48000ED58E6 /* UInt512TestsEquatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914F231A214EE48000ED58E6 /* UInt512TestsEquatable.swift */; };
 		914F231D214EE4BB00ED58E6 /* UInt512TestsComparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914F231C214EE4BB00ED58E6 /* UInt512TestsComparable.swift */; };
 		914F231F214EE50000ED58E6 /* UInt512TestsBinaryOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914F231E214EE50000ED58E6 /* UInt512TestsBinaryOperations.swift */; };
+		914F232C214EF81A00ED58E6 /* TinyUInt1024FixedWidthInteger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914F2321214EF81900ED58E6 /* TinyUInt1024FixedWidthInteger.swift */; };
+		914F232D214EF81A00ED58E6 /* TinyUInt1024CustomStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914F2322214EF81900ED58E6 /* TinyUInt1024CustomStringConvertible.swift */; };
+		914F232E214EF81A00ED58E6 /* TinyUInt1024BinaryInteger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914F2323214EF81900ED58E6 /* TinyUInt1024BinaryInteger.swift */; };
+		914F232F214EF81A00ED58E6 /* TinyUInt1024ExpressibleByStringLiteral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914F2324214EF81A00ED58E6 /* TinyUInt1024ExpressibleByStringLiteral.swift */; };
+		914F2330214EF81A00ED58E6 /* TinyUInt1024Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914F2325214EF81A00ED58E6 /* TinyUInt1024Errors.swift */; };
+		914F2331214EF81A00ED58E6 /* TinyUInt1024ExpressibleByIntegerLiteral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914F2326214EF81A00ED58E6 /* TinyUInt1024ExpressibleByIntegerLiteral.swift */; };
+		914F2332214EF81A00ED58E6 /* TinyUInt1024Numeric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914F2327214EF81A00ED58E6 /* TinyUInt1024Numeric.swift */; };
+		914F2333214EF81A00ED58E6 /* TinyUInt1024Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914F2328214EF81A00ED58E6 /* TinyUInt1024Comparable.swift */; };
+		914F2334214EF81A00ED58E6 /* TinyUInt1024Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914F2329214EF81A00ED58E6 /* TinyUInt1024Equatable.swift */; };
+		914F2335214EF81A00ED58E6 /* TinyUInt1024Hashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914F232A214EF81A00ED58E6 /* TinyUInt1024Hashable.swift */; };
+		914F2336214EF81A00ED58E6 /* TinyUInt1024UnsignedInteger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914F232B214EF81A00ED58E6 /* TinyUInt1024UnsignedInteger.swift */; };
+		914F2339214EFA0600ED58E6 /* UInt1024TestsInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914F2338214EFA0600ED58E6 /* UInt1024TestsInit.swift */; };
+		914F233B214EFA2A00ED58E6 /* UInt1024TestsEquatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914F233A214EFA2A00ED58E6 /* UInt1024TestsEquatable.swift */; };
+		914F233D214EFA5F00ED58E6 /* UInt1024TestsBinaryOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914F233C214EFA5F00ED58E6 /* UInt1024TestsBinaryOperations.swift */; };
+		914F233F214EFA9E00ED58E6 /* UInt1024TestsComparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914F233E214EFA9E00ED58E6 /* UInt1024TestsComparable.swift */; };
 		E21F14A52115D43700E57947 /* TinyBigIntSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E21F149B2115D43700E57947 /* TinyBigIntSwift.framework */; };
 		E21F14AC2115D43800E57947 /* TinyBigIntSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = E21F149E2115D43700E57947 /* TinyBigIntSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E21F14C22115D47500E57947 /* TinyUInt128ExpressibleByStringLiteral.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21F14B62115D47400E57947 /* TinyUInt128ExpressibleByStringLiteral.swift */; };
@@ -85,6 +100,21 @@
 		914F231A214EE48000ED58E6 /* UInt512TestsEquatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UInt512TestsEquatable.swift; sourceTree = "<group>"; };
 		914F231C214EE4BB00ED58E6 /* UInt512TestsComparable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UInt512TestsComparable.swift; sourceTree = "<group>"; };
 		914F231E214EE50000ED58E6 /* UInt512TestsBinaryOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UInt512TestsBinaryOperations.swift; sourceTree = "<group>"; };
+		914F2321214EF81900ED58E6 /* TinyUInt1024FixedWidthInteger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TinyUInt1024FixedWidthInteger.swift; sourceTree = "<group>"; };
+		914F2322214EF81900ED58E6 /* TinyUInt1024CustomStringConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TinyUInt1024CustomStringConvertible.swift; sourceTree = "<group>"; };
+		914F2323214EF81900ED58E6 /* TinyUInt1024BinaryInteger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TinyUInt1024BinaryInteger.swift; sourceTree = "<group>"; };
+		914F2324214EF81A00ED58E6 /* TinyUInt1024ExpressibleByStringLiteral.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TinyUInt1024ExpressibleByStringLiteral.swift; sourceTree = "<group>"; };
+		914F2325214EF81A00ED58E6 /* TinyUInt1024Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TinyUInt1024Errors.swift; sourceTree = "<group>"; };
+		914F2326214EF81A00ED58E6 /* TinyUInt1024ExpressibleByIntegerLiteral.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TinyUInt1024ExpressibleByIntegerLiteral.swift; sourceTree = "<group>"; };
+		914F2327214EF81A00ED58E6 /* TinyUInt1024Numeric.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TinyUInt1024Numeric.swift; sourceTree = "<group>"; };
+		914F2328214EF81A00ED58E6 /* TinyUInt1024Comparable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TinyUInt1024Comparable.swift; sourceTree = "<group>"; };
+		914F2329214EF81A00ED58E6 /* TinyUInt1024Equatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TinyUInt1024Equatable.swift; sourceTree = "<group>"; };
+		914F232A214EF81A00ED58E6 /* TinyUInt1024Hashable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TinyUInt1024Hashable.swift; sourceTree = "<group>"; };
+		914F232B214EF81A00ED58E6 /* TinyUInt1024UnsignedInteger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TinyUInt1024UnsignedInteger.swift; sourceTree = "<group>"; };
+		914F2338214EFA0600ED58E6 /* UInt1024TestsInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UInt1024TestsInit.swift; sourceTree = "<group>"; };
+		914F233A214EFA2A00ED58E6 /* UInt1024TestsEquatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UInt1024TestsEquatable.swift; sourceTree = "<group>"; };
+		914F233C214EFA5F00ED58E6 /* UInt1024TestsBinaryOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UInt1024TestsBinaryOperations.swift; sourceTree = "<group>"; };
+		914F233E214EFA9E00ED58E6 /* UInt1024TestsComparable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UInt1024TestsComparable.swift; sourceTree = "<group>"; };
 		E21F149B2115D43700E57947 /* TinyBigIntSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TinyBigIntSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E21F149E2115D43700E57947 /* TinyBigIntSwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TinyBigIntSwift.h; sourceTree = "<group>"; };
 		E21F149F2115D43700E57947 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -179,6 +209,35 @@
 			path = TinyUInt512Tests;
 			sourceTree = "<group>";
 		};
+		914F2320214EF7F400ED58E6 /* TinyUInt1024 */ = {
+			isa = PBXGroup;
+			children = (
+				914F2323214EF81900ED58E6 /* TinyUInt1024BinaryInteger.swift */,
+				914F2328214EF81A00ED58E6 /* TinyUInt1024Comparable.swift */,
+				914F2322214EF81900ED58E6 /* TinyUInt1024CustomStringConvertible.swift */,
+				914F2329214EF81A00ED58E6 /* TinyUInt1024Equatable.swift */,
+				914F2325214EF81A00ED58E6 /* TinyUInt1024Errors.swift */,
+				914F2326214EF81A00ED58E6 /* TinyUInt1024ExpressibleByIntegerLiteral.swift */,
+				914F2324214EF81A00ED58E6 /* TinyUInt1024ExpressibleByStringLiteral.swift */,
+				914F2321214EF81900ED58E6 /* TinyUInt1024FixedWidthInteger.swift */,
+				914F232A214EF81A00ED58E6 /* TinyUInt1024Hashable.swift */,
+				914F2327214EF81A00ED58E6 /* TinyUInt1024Numeric.swift */,
+				914F232B214EF81A00ED58E6 /* TinyUInt1024UnsignedInteger.swift */,
+			);
+			path = TinyUInt1024;
+			sourceTree = "<group>";
+		};
+		914F2337214EF9E900ED58E6 /* TinyUInt1024Tests */ = {
+			isa = PBXGroup;
+			children = (
+				914F2338214EFA0600ED58E6 /* UInt1024TestsInit.swift */,
+				914F233A214EFA2A00ED58E6 /* UInt1024TestsEquatable.swift */,
+				914F233C214EFA5F00ED58E6 /* UInt1024TestsBinaryOperations.swift */,
+				914F233E214EFA9E00ED58E6 /* UInt1024TestsComparable.swift */,
+			);
+			path = TinyUInt1024Tests;
+			sourceTree = "<group>";
+		};
 		E21F14912115D43700E57947 = {
 			isa = PBXGroup;
 			children = (
@@ -201,6 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				E21F14F12115E79D00E57947 /* StandartTypesTinyBigIntExtensions */,
+				914F2320214EF7F400ED58E6 /* TinyUInt1024 */,
 				914F2300214EDEB100ED58E6 /* TinyUInt512 */,
 				E21F14DA2115E4CA00E57947 /* TinyUInt256 */,
 				E21F14B52115D45C00E57947 /* TinyUInt128 */,
@@ -214,9 +274,10 @@
 			isa = PBXGroup;
 			children = (
 				914F22DA214ED54B00ED58E6 /* StringExtensionTests */,
+				914F2337214EF9E900ED58E6 /* TinyUInt1024Tests */,
+				914F2317214EE41300ED58E6 /* TinyUInt512Tests */,
 				E21F15512115F0AD00E57947 /* TinyUInt256Tests */,
 				E21F14CE2115D49200E57947 /* TinyUInt128Tests */,
-				914F2317214EE41300ED58E6 /* TinyUInt512Tests */,
 				E21F14AB2115D43800E57947 /* Info.plist */,
 			);
 			path = TinyBigIntSwiftTests;
@@ -400,29 +461,40 @@
 				E21F14C22115D47500E57947 /* TinyUInt128ExpressibleByStringLiteral.swift in Sources */,
 				E21F14C82115D47600E57947 /* TinyUInt128ExpressibleByIntegerLiteral.swift in Sources */,
 				E21F14EF2115E59C00E57947 /* TinyUInt256Equatable.swift in Sources */,
+				914F232E214EF81A00ED58E6 /* TinyUInt1024BinaryInteger.swift in Sources */,
 				E21F14CB2115D47600E57947 /* StringExtension.swift in Sources */,
 				914F230E214EDF5A00ED58E6 /* TinyUInt512UnsignedInteger.swift in Sources */,
 				E21F14C72115D47600E57947 /* TinyUInt128Comparable.swift in Sources */,
 				E21F14F02115E59C00E57947 /* TinyUInt256UnsignedInteger.swift in Sources */,
 				914F2313214EDF5A00ED58E6 /* TinyUInt512BinaryInteger.swift in Sources */,
 				E21F14ED2115E59C00E57947 /* TinyUInt256Errors.swift in Sources */,
+				914F2336214EF81A00ED58E6 /* TinyUInt1024UnsignedInteger.swift in Sources */,
 				914F2312214EDF5A00ED58E6 /* TinyUInt512Numeric.swift in Sources */,
 				E21F14C92115D47600E57947 /* TinyUInt128BinaryInteger.swift in Sources */,
 				914F230C214EDF5A00ED58E6 /* TinyUInt512Hashable.swift in Sources */,
 				E21F14C52115D47600E57947 /* TinyUInt128CustomStringConvertible.swift in Sources */,
 				E21F14EB2115E59C00E57947 /* TinyUInt256ExpressibleByIntegerLiteral.swift in Sources */,
+				914F232F214EF81A00ED58E6 /* TinyUInt1024ExpressibleByStringLiteral.swift in Sources */,
+				914F232D214EF81A00ED58E6 /* TinyUInt1024CustomStringConvertible.swift in Sources */,
 				914F2316214EDF5A00ED58E6 /* TinyUInt512Comparable.swift in Sources */,
+				914F2330214EF81A00ED58E6 /* TinyUInt1024Errors.swift in Sources */,
 				914F2314214EDF5A00ED58E6 /* TinyUInt512CustomStringConvertible.swift in Sources */,
+				914F2335214EF81A00ED58E6 /* TinyUInt1024Hashable.swift in Sources */,
 				E21F14CD2115D47600E57947 /* TinyUInt128UnsignedInteger.swift in Sources */,
 				E21F14E82115E59C00E57947 /* TinyUInt256FixedWidthInteger.swift in Sources */,
+				914F2332214EF81A00ED58E6 /* TinyUInt1024Numeric.swift in Sources */,
+				914F2334214EF81A00ED58E6 /* TinyUInt1024Equatable.swift in Sources */,
 				E21F14EE2115E59C00E57947 /* TinyUInt256Numeric.swift in Sources */,
+				914F232C214EF81A00ED58E6 /* TinyUInt1024FixedWidthInteger.swift in Sources */,
 				914F2310214EDF5A00ED58E6 /* TinyUInt512Errors.swift in Sources */,
+				914F2333214EF81A00ED58E6 /* TinyUInt1024Comparable.swift in Sources */,
 				E21F14E62115E59C00E57947 /* TinyUInt256ExpressibleByStringLiteral.swift in Sources */,
 				914F230D214EDF5A00ED58E6 /* TinyUInt512ExpressibleByStringLiteral.swift in Sources */,
 				E21F14C42115D47600E57947 /* TinyUInt128FixedWidthInteger.swift in Sources */,
 				914F230F214EDF5A00ED58E6 /* TinyUInt512FixedWidthInteger.swift in Sources */,
 				914F2315214EDF5A00ED58E6 /* TinyUInt512ExpressibleByIntegerLiteral.swift in Sources */,
 				E21F14E72115E59C00E57947 /* TinyUInt256CustomStringConvertible.swift in Sources */,
+				914F2331214EF81A00ED58E6 /* TinyUInt1024ExpressibleByIntegerLiteral.swift in Sources */,
 				E21F14C62115D47600E57947 /* TinyUInt128Equatable.swift in Sources */,
 				E21F14EA2115E59C00E57947 /* TinyUInt256Comparable.swift in Sources */,
 				E21F14EC2115E59C00E57947 /* TinyUInt256Hashable.swift in Sources */,
@@ -444,13 +516,17 @@
 				914F22DC214ED56D00ED58E6 /* StringExtensionTests.swift in Sources */,
 				E2E415CB2131646600E6080A /* UInt256TestsEquatable.swift in Sources */,
 				914F231F214EE50000ED58E6 /* UInt512TestsBinaryOperations.swift in Sources */,
+				914F2339214EFA0600ED58E6 /* UInt1024TestsInit.swift in Sources */,
 				E2E415C92131638E00E6080A /* UInt256TestsComparable.swift in Sources */,
 				E21F14D42115D4AA00E57947 /* UInt128TestsEquatable.swift in Sources */,
+				914F233D214EFA5F00ED58E6 /* UInt1024TestsBinaryOperations.swift in Sources */,
 				E21F14D52115D4AA00E57947 /* UInt128TestsInit.swift in Sources */,
 				914F231D214EE4BB00ED58E6 /* UInt512TestsComparable.swift in Sources */,
+				914F233F214EFA9E00ED58E6 /* UInt1024TestsComparable.swift in Sources */,
 				E21F15552115F19400E57947 /* UInt256TestsBinaryOperations.swift in Sources */,
 				E21F15532115F14C00E57947 /* UInt256TestsInit.swift in Sources */,
 				914F231B214EE48000ED58E6 /* UInt512TestsEquatable.swift in Sources */,
+				914F233B214EFA2A00ED58E6 /* UInt1024TestsEquatable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
