@@ -29,10 +29,21 @@ class UInt256TestsInit: XCTestCase {
         XCTAssertEqual(actual, expected)
     }
     
+    func testInitMax() {
+        let expected = TinyUInt256.max
+        let actual: TinyUInt256 = "115792089237316195423570985008687907853269984665640564039457584007913129639935"
+        XCTAssertEqual(actual, expected)
+    }
+    
     func testInitLiteralString() {
         let expected = TinyUInt256(firstHalf: 0, secondHalf: 1)
         let actual: TinyUInt256 = "1"
         XCTAssertEqual(actual, expected)
     }
     
+    func testInitStringWithRandomRadix() {
+        let expected = TinyUInt256(firstHalf: 0, secondHalf: 6467)
+        let actual: TinyUInt256 = TinyUInt256("1567", radix: 17)!
+        XCTAssertEqual(actual, expected)
+    }
 }

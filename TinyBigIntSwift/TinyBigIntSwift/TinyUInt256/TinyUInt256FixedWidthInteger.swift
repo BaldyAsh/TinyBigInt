@@ -19,20 +19,26 @@ extension TinyUInt256: FixedWidthInteger {
     
     public var leadingZeroBitCount: Int {
         
-        var count = 0
-        var shift = 127
+//        var count = 0
+//        var shift = 127
+//
+//        repeat {
+//            let bit = self &>> 127
+//            if bit == 0 {
+//                count += 1
+//                shift -= 1
+//            } else {
+//                break
+//            }
+//        } while shift > 0
+//
+//        return count
         
-        repeat {
-            let bit = self &>> 127
-            if bit == 0 {
-                count += 1
-                shift -= 1
-            } else {
-                break
-            }
-        } while shift > 0
-        
-        return count
+        if storage.firstHalf == 0 {
+            return TinyUInt128.bitWidth + storage.secondHalf.leadingZeroBitCount
+        } else {
+            return storage.firstHalf.leadingZeroBitCount
+        }
         
     }
     
@@ -298,12 +304,12 @@ extension TinyUInt256: FixedWidthInteger {
         switch bitPosition {
         case 0:
             return input.low & 1
-        case 1...127:
+        case 1...255:
             return input.low >> bitPosition & 1
-        case 128:
+        case 256:
             return input.high & 1
         default:
-            return input.high >> (bitPosition - 128) & 1
+            return input.high >> (bitPosition - 256) & 1
         }
     }
 }

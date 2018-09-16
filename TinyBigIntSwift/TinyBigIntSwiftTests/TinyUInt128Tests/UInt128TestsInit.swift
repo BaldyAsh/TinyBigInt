@@ -29,9 +29,21 @@ class UInt128TestsInit: XCTestCase {
         XCTAssertEqual(actual, expected)
     }
     
+    func testInitMax() {
+        let expected = TinyUInt128.max
+        let actual: TinyUInt128 = "340282366920938463463374607431768211455"
+        XCTAssertEqual(actual, expected)
+    }
+    
     func testInitLiteralString() {
         let expected = TinyUInt128(firstHalf: 0, secondHalf: 1)
         let actual: TinyUInt128 = "1"
+        XCTAssertEqual(actual, expected)
+    }
+    
+    func testInitStringWithRandomRadix() {
+        let expected = TinyUInt128(firstHalf: 0, secondHalf: 6467)
+        let actual: TinyUInt128 = TinyUInt128("1567", radix: 17)!
         XCTAssertEqual(actual, expected)
     }
 }

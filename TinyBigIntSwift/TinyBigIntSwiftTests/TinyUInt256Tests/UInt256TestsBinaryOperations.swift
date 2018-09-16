@@ -93,10 +93,10 @@ class UInt256TestsBinaryOperations: XCTestCase {
     }
     
     func testDivide4() {
-        let first = TinyUInt128(firstHalf: 0, secondHalf: 0)
-        let second = TinyUInt128(firstHalf: 0, secondHalf: 3)
+        let first = TinyUInt256(firstHalf: 0, secondHalf: 0)
+        let second = TinyUInt256(firstHalf: 0, secondHalf: 3)
         let result = first / second
-        XCTAssertEqual(TinyUInt128(firstHalf: 0, secondHalf: 0), result)
+        XCTAssertEqual(TinyUInt256(firstHalf: 0, secondHalf: 0), result)
     }
     
 }
