@@ -33,3 +33,8 @@ The library provides implementations for the most useful functions on big intege
 - Radix conversion to/from [`String`s][radix1] and [big integers][radix2].
 
 The library needs to be 100% unit test coveraged.
+
+[radix1]: http://baldyash.github.io/TinyBigInt/Extensions/TinyBigInt.html#/s:FE6BigIntSScFTVS_7BigUInt5radixSi9uppercaseSb_SS
+[radix2]: http://baldyash.github.io/TinyBigInt/Structs/TinyBigInt.html#/s:FV6BigInt7BigUIntcFTSS5radixSi_GSqS0__
+[comparison]: http://baldyash.github.io/TinyBigInt/Structs/TinyBigInt.html#/Comparison
+[BigUInt]: http://baldyash.github.io/TinyBigInt/Structs/TinyBigInt.html
