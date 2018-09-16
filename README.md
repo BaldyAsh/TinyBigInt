@@ -40,7 +40,7 @@ TinyBigInt can be used, distributed and modified under [the MIT license][license
 
 ## <a name="integration">Requirements and Integration</a>
 
-TinyBigInt 3.0.0 requires Swift 4.
+TinyBigInt 1.0.0 requires Swift 4.
 
 BigInt deploys to macOS 10.10, iOS 9, watchOS 2 and tvOS 9.
 
