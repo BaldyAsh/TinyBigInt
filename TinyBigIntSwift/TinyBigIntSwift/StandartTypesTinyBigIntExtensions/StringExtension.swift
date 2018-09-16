@@ -15,4 +15,8 @@ extension String {
     public init(_ storage: TinyUInt256, radix: Int = 10, uppercase: Bool = false) {
         self = storage.valueToString(radix: radix, uppercase: uppercase)
     }
+    
+    public init(_ storage: TinyUInt512, radix: Int = 10, uppercase: Bool = false) {
+        self = storage.valueToString(radix: radix, uppercase: uppercase)
+    }
 }
