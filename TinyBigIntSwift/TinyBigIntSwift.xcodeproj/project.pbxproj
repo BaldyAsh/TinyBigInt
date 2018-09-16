@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		914F22DC214ED56D00ED58E6 /* StringExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914F22DB214ED56D00ED58E6 /* StringExtensionTests.swift */; };
 		E21F14A52115D43700E57947 /* TinyBigIntSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E21F149B2115D43700E57947 /* TinyBigIntSwift.framework */; };
 		E21F14AC2115D43800E57947 /* TinyBigIntSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = E21F149E2115D43700E57947 /* TinyBigIntSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E21F14C22115D47500E57947 /* TinyUInt128ExpressibleByStringLiteral.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21F14B62115D47400E57947 /* TinyUInt128ExpressibleByStringLiteral.swift */; };
@@ -53,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		914F22DB214ED56D00ED58E6 /* StringExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensionTests.swift; sourceTree = "<group>"; };
 		E21F149B2115D43700E57947 /* TinyBigIntSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TinyBigIntSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E21F149E2115D43700E57947 /* TinyBigIntSwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TinyBigIntSwift.h; sourceTree = "<group>"; };
 		E21F149F2115D43700E57947 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -110,6 +112,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		914F22DA214ED54B00ED58E6 /* StringExtensionTests */ = {
+			isa = PBXGroup;
+			children = (
+				914F22DB214ED56D00ED58E6 /* StringExtensionTests.swift */,
+			);
+			path = StringExtensionTests;
+			sourceTree = "<group>";
+		};
 		E21F14912115D43700E57947 = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +153,7 @@
 		E21F14A82115D43700E57947 /* TinyBigIntSwiftTests */ = {
 			isa = PBXGroup;
 			children = (
+				914F22DA214ED54B00ED58E6 /* StringExtensionTests */,
 				E21F15512115F0AD00E57947 /* TinyUInt256Tests */,
 				E21F14CE2115D49200E57947 /* TinyUInt128Tests */,
 				E21F14AB2115D43800E57947 /* Info.plist */,
@@ -357,6 +368,7 @@
 			files = (
 				E21F14D32115D4AA00E57947 /* UInt128TestsBinaryOperations.swift in Sources */,
 				E21F14D62115D4AA00E57947 /* UInt128TestsComparable.swift in Sources */,
+				914F22DC214ED56D00ED58E6 /* StringExtensionTests.swift in Sources */,
 				E2E415CB2131646600E6080A /* UInt256TestsEquatable.swift in Sources */,
 				E2E415C92131638E00E6080A /* UInt256TestsComparable.swift in Sources */,
 				E21F14D42115D4AA00E57947 /* UInt128TestsEquatable.swift in Sources */,
