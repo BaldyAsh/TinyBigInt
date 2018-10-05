@@ -39,7 +39,6 @@
 		914F233D214EFA5F00ED58E6 /* UInt1024TestsBinaryOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914F233C214EFA5F00ED58E6 /* UInt1024TestsBinaryOperations.swift */; };
 		914F233F214EFA9E00ED58E6 /* UInt1024TestsComparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914F233E214EFA9E00ED58E6 /* UInt1024TestsComparable.swift */; };
 		E21F14A52115D43700E57947 /* TinyBigIntSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E21F149B2115D43700E57947 /* TinyBigIntSwift.framework */; };
-		E21F14AC2115D43800E57947 /* TinyBigIntSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = E21F149E2115D43700E57947 /* TinyBigIntSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E21F14C22115D47500E57947 /* TinyUInt128ExpressibleByStringLiteral.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21F14B62115D47400E57947 /* TinyUInt128ExpressibleByStringLiteral.swift */; };
 		E21F14C32115D47600E57947 /* TinyUInt128Hashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21F14B72115D47400E57947 /* TinyUInt128Hashable.swift */; };
 		E21F14C42115D47600E57947 /* TinyUInt128FixedWidthInteger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21F14B82115D47400E57947 /* TinyUInt128FixedWidthInteger.swift */; };
@@ -116,7 +115,6 @@
 		914F233C214EFA5F00ED58E6 /* UInt1024TestsBinaryOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UInt1024TestsBinaryOperations.swift; sourceTree = "<group>"; };
 		914F233E214EFA9E00ED58E6 /* UInt1024TestsComparable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UInt1024TestsComparable.swift; sourceTree = "<group>"; };
 		E21F149B2115D43700E57947 /* TinyBigIntSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TinyBigIntSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E21F149E2115D43700E57947 /* TinyBigIntSwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TinyBigIntSwift.h; sourceTree = "<group>"; };
 		E21F149F2115D43700E57947 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E21F14A42115D43700E57947 /* TinyBigIntSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TinyBigIntSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E21F14AB2115D43800E57947 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -264,7 +262,6 @@
 				914F2300214EDEB100ED58E6 /* TinyUInt512 */,
 				E21F14DA2115E4CA00E57947 /* TinyUInt256 */,
 				E21F14B52115D45C00E57947 /* TinyUInt128 */,
-				E21F149E2115D43700E57947 /* TinyBigIntSwift.h */,
 				E21F149F2115D43700E57947 /* Info.plist */,
 			);
 			path = TinyBigIntSwift;
@@ -356,7 +353,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E21F14AC2115D43800E57947 /* TinyBigIntSwift.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,10 +407,11 @@
 				TargetAttributes = {
 					E21F149A2115D43700E57947 = {
 						CreatedOnToolsVersion = 9.4.1;
-						LastSwiftMigration = 0940;
+						LastSwiftMigration = 1000;
 					};
 					E21F14A32115D43700E57947 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -674,6 +671,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = TinyBigIntSwift/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -683,7 +681,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -701,6 +699,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = TinyBigIntSwift/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -709,7 +708,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.baldyash.TinyBigIntSwift;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -728,7 +727,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.baldyash.TinyBigIntSwiftTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -747,7 +746,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.baldyash.TinyBigIntSwiftTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
