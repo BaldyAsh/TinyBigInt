@@ -117,7 +117,6 @@
 		E21F149B2115D43700E57947 /* TinyBigIntSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TinyBigIntSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E21F149F2115D43700E57947 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E21F14A42115D43700E57947 /* TinyBigIntSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TinyBigIntSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E21F14AB2115D43800E57947 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E21F14B62115D47400E57947 /* TinyUInt128ExpressibleByStringLiteral.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TinyUInt128ExpressibleByStringLiteral.swift; sourceTree = "<group>"; };
 		E21F14B72115D47400E57947 /* TinyUInt128Hashable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TinyUInt128Hashable.swift; sourceTree = "<group>"; };
 		E21F14B82115D47400E57947 /* TinyUInt128FixedWidthInteger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TinyUInt128FixedWidthInteger.swift; sourceTree = "<group>"; };
@@ -275,7 +274,6 @@
 				914F2317214EE41300ED58E6 /* TinyUInt512Tests */,
 				E21F15512115F0AD00E57947 /* TinyUInt256Tests */,
 				E21F14CE2115D49200E57947 /* TinyUInt128Tests */,
-				E21F14AB2115D43800E57947 /* Info.plist */,
 			);
 			path = TinyBigIntSwiftTests;
 			sourceTree = "<group>";
